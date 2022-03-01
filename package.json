@@ -1,0 +1,22 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Somaiah Uthappa",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somaiahuthappa/reademe-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/somaiahuthappa/reademe-generator/issues"
+  },
+  "homepage": "https://github.com/somaiahuthappa/reademe-generator#readme"
+}
