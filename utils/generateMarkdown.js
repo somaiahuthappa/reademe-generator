@@ -15,8 +15,7 @@ const renderLicenseSection = license => {
   if (!license) {
     return '';
   } else {
-    return `## License <br/>
-    This application is covered by the ${license} license.`;
+    return `This application is covered by the ${license} license.`;
   }
 };
 
@@ -56,6 +55,7 @@ const generateMarkdown = (data) => {
 
   -------------------
 
+  ## License
   ${renderLicenseSection(data.license)}
 
   -------------------
@@ -68,6 +68,7 @@ const generateMarkdown = (data) => {
 
   ## Tests
   ${data.tests}
+
   -------------------
 
   ## Questions

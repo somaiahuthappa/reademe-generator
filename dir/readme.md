@@ -1,14 +1,14 @@
 
-  # u <br/>
+  # Readme Generator <br/>
 
   -------------------
 
-  ![badge](https://img.shields.io/badge/license-Apache-success)
+  ![badge](https://img.shields.io/badge/license-MIT-success)
 
   -------------------
 
   ## Description
-  u
+  An app that generates a readme in markdown using command line input.
 
   -------------------
 
@@ -23,32 +23,33 @@
   -------------------
 
   ## Installation
-  u
+  node.js and inquirer required.
 
   -------------------
 
   ## Usage
-  u
+  To generate reademe files.
 
   -------------------
 
-  ## License <br/>
-    This application is covered by the Apache 2.0 license
+  ## License
+  This application is covered by the MIT license.
 
   -------------------
 
   ## Contributors
-  u <br/>
+  Somaiah Uthappa <br/>
   [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
   -------------------
 
   ## Tests
-  u
+  None
+
   -------------------
 
   ## Questions
-  - If you have any questions, find me on Github [u](https://github.com/u) or email me at u.
+  - If you have any questions, find me on Github [somaiahuthappa](https://github.com/somaiahuthappa) or email me at somaiahuthappa@gmail.com.
 
   -------------------
 
