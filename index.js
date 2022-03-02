@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
 
-
+// object array containing the prompts
 const promptUser = () => {
     return inquirer.prompt([
         {
@@ -126,6 +126,7 @@ const promptUser = () => {
     ]);
 };
 
+// calling the function to write the file
 promptUser()
     .then(readmeData => {
         const pageReadme = generateMarkdown(readmeData);
