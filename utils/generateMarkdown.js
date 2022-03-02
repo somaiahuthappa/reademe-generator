@@ -1,27 +1,32 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-const renderLicenseBadge = licenseText => {
-  return `[badge](https://img.shields.io/badge/license-${data.license}-success)`
-}
+const renderLicenseBadge = (license) => {
+  if (!license) {
+    return '';
+  } else {
+    return `![badge](https://img.shields.io/badge/license-${license}-success)`;
+  }
+
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = licenseText => {
-  if (!licenseText) {
-    return '';
+const renderLicenseSection = license => {
+  if (!license) {
+    return `No license has been selected.`;
   } else {
-    return `This application is covered by the ${renderLicenseLink(licenseText)} license`;
+    return `This application is covered by the ${license} license`;
   }
-}
+};
 
 // TODO: Create a function to generate markdown for README
-module.exports = () => {
+const generateMarkdown = (data) => {
   return `
   # ${data.title} <br/>
 
   -------------------
 
-  ${renderLicenseBadge}
+  ${renderLicenseBadge(data.license)}
 
   -------------------
 
@@ -51,7 +56,7 @@ module.exports = () => {
   -------------------
 
   ## License
-  ${renderLicenseSection(licenseText)}
+  ${renderLicenseSection(data.license)}
 
   -------------------
 
@@ -66,10 +71,13 @@ module.exports = () => {
   -------------------
 
   ## Questions
-  - If you have any questions, find me on Github [${data.github}](https://github.com/${answers.username}) or email me at ${data.email}.
+  - If you have any questions, find me on Github [${data.github}](https://github.com/${data.github}) or email me at ${data.email}.
 
   -------------------
 
 `;
-}
+};
 
+module.exports = data => {
+  return generateMarkdown(data);
+}

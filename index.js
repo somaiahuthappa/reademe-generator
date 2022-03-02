@@ -10,22 +10,53 @@ const promptUser = () => {
             type: 'input',
             name: 'title',
             message: 'What is the title of your app?',
-
+            validate: titleInput => {
+                if (titleInput) {
+                  return true;
+                } else {
+                  console.log('You need to enter a project title!');
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Please add a description for your app.'
+            message: 'Please add a description for your app.',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                  return true;
+                } else {
+                  console.log('You need to enter a project description!');
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Please include installation instructions.'
+            message: 'Please include installation instructions.',
+            validate: installationInput => {
+                if (installationInput) {
+                  return true;
+                } else {
+                  console.log('You need to include installation requirements and/or instructions!');
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Please mention what your app will be used for.'
+            message: 'Please mention what your app will be used for.',
+            validate: usageInput => {
+                if (usageInput) {
+                  return true;
+                } else {
+                  console.log('You need to mention what the project will be used for!');
+                  return false;
+                }
+              }
         },
         {
             type: 'confirm',
@@ -43,48 +74,67 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'contributors',
-            message: 'Please include the names of all the contributors to this app.'
+            message: 'Please include the names of all the contributors to this app.',
+            validate: contributorsInput => {
+                if (contributorsInput) {
+                  return true;
+                } else {
+                  console.log('You need to include the contributors!');
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'tests',
-            message: 'Please include any tests.'
-        },
-        {
-            type:'confirm',
-            name: 'questions',
-            message: 'Would you like to include your contact information for users if they have questions about your app?',
-            default: true
+            message: 'Please include any tests.',
+            validate: testsInput => {
+                if (testsInput) {
+                  return true;
+                } else {
+                  console.log('You need to enter a test! If no tests then please enter"None".');
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'github',
             message: 'Please insert your GitHub username',
-            when: ({confirmLicense}) => confirmLicense
+            validate: githubInput => {
+                if (githubInput) {
+                  return true;
+                } else {
+                  console.log('You need to enter a GitHub username!');
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'email',
             message: 'Please enter your email.',
-            when: ({confirmLicense}) => confirmLicense
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log('You need to enter an email!');
+                  return false;
+                }
+              }
         }
     ]);
 };
 
 promptUser()
-    .then(data => {
-        console.log(data);
+    .then(readmeData => {
+        const pageReadme = generateMarkdown(readmeData);
+        fs.writeFile('./dir/readme.md', pageReadme, err => {
+            if (err) throw new Error(err);
+
+            console.log('Page created! Checkout readme.md in the dir folder.')
+        });
     })
 
-
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
 
 
